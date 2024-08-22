@@ -36,10 +36,10 @@ const UserList = () => {
 
   return (
     <Container>
-      <Box mt={4}>
-        <Typography variant="h4" align="center" className="montserrat-title" gutterBottom style={{ marginTop: '80px' }}>
-          Liste des Utilisateurs
-        </Typography>
+      <Box sx={{ marginTop: 15}}>
+        <Typography variant='h5' sx={{ fontWeight: '300' }} gutterBottom>Liste des Utilisateurs</Typography>
+      </Box>
+      <Box mt={1}>
         <List>
           {users.map((user) => (
             <ListItem key={user._id} divider>

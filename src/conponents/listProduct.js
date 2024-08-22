@@ -43,15 +43,15 @@ const ProductList = () => {
 
   return (
     <Container>
-      <Box mt={4}>
-        <Typography variant="h4" align="center" gutterBottom style={{ marginTop: '80px' }}> 
-          Liste des Produits
-        </Typography>
+      <Box sx={{ marginTop: 15}}>
+        <Typography variant='h5' sx={{ fontWeight: '300' }} gutterBottom>Liste des Produits</Typography>
+      </Box>
+      <Box mt={1}>
         <List>
           {products.map((product) => (
             <ListItem key={product._id} divider>
               <Grid container alignItems="center">
-                <Grid item xs={8}>
+                <Grid item xs={8}>  
                   <ListItemText
                     primary={product.name}
                     secondary={product.description}
