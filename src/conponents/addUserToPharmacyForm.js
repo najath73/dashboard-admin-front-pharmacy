@@ -11,7 +11,7 @@ const AddUserToPharmacy = () => {
   const [email, setEmail] = useState('');
   const [role, setRole] = useState('PHARMACY_WORKER');
   const { id } = useParams(); // Get pharmacy ID from URL params
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const token = localStorage.getItem('token');
 
   useEffect(() => {

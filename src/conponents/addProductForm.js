@@ -24,10 +24,13 @@ const AddProductForm = () => {
   };
 
     return (
-        <Container component="main" maxWidth="xs">
-        <Box sx={{ marginTop: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        
+        <Container>
+        <Box sx={{ marginTop: 15}}>
+          <Typography variant='h5' sx={{ fontWeight: '300' }} gutterBottom>Ajouter un produit</Typography>
+        </Box>
+        <Box >
             
-            <Typography component="h2" variant="h5">Ajouter un Produit</Typography>
             <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
             <TextField
                 margin="normal"
