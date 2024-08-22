@@ -41,7 +41,8 @@ const PharmacyList = () => {
     navigate(`/update-pharmacy/${id}`);
   };
 
-  const handleAddUser = (pharmacyId) => {
+  const handleAddUser = (pharmacyId, e) => {
+    e.stopPropagation(); // Empêche le clic sur le bouton d'ouvrir les détails de la pharmacie
     navigate(`/add-user-to-pharmacy/${pharmacyId}`);
   };
 
@@ -51,13 +52,13 @@ const PharmacyList = () => {
 
   return (
     <Container>
-      <Box mt={4}>
-        <Typography variant="h4" align="center" gutterBottom style={{ marginTop: '80px' }}>
-          Liste des Pharmacies
-        </Typography>
+      <Box sx={{ marginTop: 20, display: 'flex', flexDirection: 'column'}}>
+        <Typography variant='h5' sx={{ fontWeight: '300' }} gutterBottom>Liste des Pharmacies</Typography>
+      </Box>
+      <Box mt={1}>
         <List>
           {pharmacies.map((pharmacy) => (
-            <ListItem 
+            <ListItem   
               key={pharmacy._id} 
               divider 
               button 
@@ -71,20 +72,23 @@ const PharmacyList = () => {
                   />
                 </Grid>
                 <Grid item xs={6} container justifyContent="flex-end">
-                  <IconButton color="primary" onClick={() => handleEdit(pharmacy._id)}>
+                  <IconButton color="primary" onClick={(e) => {
+                    e.stopPropagation(); // Empêche le clic sur le bouton d'ouvrir les détails de la pharmacie
+                    handleEdit(pharmacy._id);
+                  }}>
                     <EditIcon />
                   </IconButton>
-                  <IconButton color="secondary" onClick={() => handleDelete(pharmacy._id)}>
+                  <IconButton color="secondary" onClick={(e) => {
+                    e.stopPropagation(); // Empêche le clic sur le bouton d'ouvrir les détails de la pharmacie
+                    handleDelete(pharmacy._id);
+                  }}>
                     <DeleteIcon />
                   </IconButton>
                   <Button
                     variant="contained"
                     color="primary"
                     startIcon={<PersonAddIcon />}
-                    onClick={(e) => {
-                      e.stopPropagation(); // Empêche le clic sur le bouton d'ouvrir les détails de la pharmacie
-                      handleAddUser(pharmacy._id);
-                    }}
+                    onClick={(e) => handleAddUser(pharmacy._id, e)} // Passe l'événement à handleAddUser
                     sx={{
                       backgroundColor: '#35b2a3',
                       color: '#fff',

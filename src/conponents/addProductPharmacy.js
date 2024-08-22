@@ -26,7 +26,7 @@ const AddProductInPharmacyForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('https://back-pharmacie.onrender.com/products-in-pharmacy', {
+      await axios.post('https://back-pharmacie.onrender.com/products-in-pharmacy', {
         product: selectedProduct,
         pharmacy: selectedPharmacy,
         price: parseFloat(price),

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, Box, Toolbar, Typography } from '@mui/material';
+import { Drawer, Box, Toolbar } from '@mui/material';
 import SidebarUserPanel from '../conponents/sidebarUserPanel';
 import SidebarMenu from '../conponents/sidebarMenu';
 
@@ -17,9 +17,6 @@ const Sidebar = () =>  {
     >
       <Toolbar />
       <Box sx={{ overflow: 'auto' }}>
-        <Typography variant="h6" sx={{ textAlign: 'center', mt: 2 }}>
-          Pharma App
-        </Typography>
         <SidebarUserPanel />
         <SidebarMenu />
       </Box>

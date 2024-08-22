@@ -33,10 +33,10 @@ const AdminUser = () => {
 
   return (
     <Container>
-      <Box mt={4}>
-        <Typography variant="h4" align="center" gutterBottom style={{ marginTop: '80px' }}>
-          Ajouter un Administrateur
-        </Typography>
+      <Box sx={{ marginTop: 15}}>
+        <Typography variant='h5' sx={{ fontWeight: '300' }} gutterBottom>Ajouter un Administrateur</Typography>
+      </Box>
+      <Box mt={1}>
         <Box mt={4} component="form" onSubmit={handleSubmit}>
           <TextField
             fullWidth

@@ -1,42 +1,29 @@
-
 import React, { useState } from 'react';
-import { TextField, Button, Box, Typography, Container } from '@mui/material';
-import axios from 'axios';
+import { useAuth } from '../hooks/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { Container, TextField, Button, Typography, Grid, Box, Alert } from '@mui/material';
 
-const LoginForm = () => {
+const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [error, setError] = useState(''); // État pour les erreurs
+  const { login } = useAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     try {
-      const response = await axios.post('https://back-pharmacie.onrender.com/login', {
-        username,
-        password,
-      }, {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
-      });
-      
-      // Stockage du token et redirection
-      const { access_token } = response.data;
-      localStorage.setItem('token', access_token);
-      navigate('/dashboard-admin'); 
-    } catch (err) {
-      if (err.response && err.response.status === 401) {
-        setError('Mot de passe incorrect. Veuillez vérifier vos informations.');
-      } else {
-        setError('Erreur lors de la connexion. Veuillez vérifier vos informations.');
-      }
+      await login(username, password); // Appel à la fonction login du contexte
+      navigate('/dashboard-admin'); // Redirection après login
+    } catch (error) {
+      console.error('Erreur lors de la connexion:', error);
+      setError('Nom d\'utilisateur ou mot de passe incorrect'); // Mettre à jour l'état d'erreur
     }
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container maxWidth="sm">
       <Box
         sx={{
           marginTop: 8,
@@ -46,45 +33,43 @@ const LoginForm = () => {
         }}
       >
         <Typography component="h1" variant="h5">
-          Login
+          Connexion
         </Typography>
-        <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            id="username"
-            label="Nom d'utilisateur"
-            name="username"
-            autoComplete="username"
-            autoFocus
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <TextField
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Mot de passe"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+        <Box component="form" onSubmit={handleSubmit} sx={{ mt: 3 }}>
           {error && (
-            <Typography color="error" variant="body2">
+            <Alert severity="error" sx={{ mb: 2 }}>
               {error}
-            </Typography>
+            </Alert>
           )}
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                label="Nom d'utilisateur"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                fullWidth
+                label="Mot de passe"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Grid>
+          </Grid>
           <Button
             type="submit"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2, backgroundColor: 'lightgrey' }}
+            color="primary"
+            sx={{ mt: 3, mb: 2 }}
           >
-            Login
+            Connexion
           </Button>
         </Box>
       </Box>
@@ -92,4 +77,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default LoginPage;

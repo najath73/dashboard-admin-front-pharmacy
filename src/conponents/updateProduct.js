@@ -49,18 +49,11 @@ const UpdateProduct = () => {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
-      <Box
-        sx={{
-          marginTop: 8,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-        }}
-      >
-        <Typography component="h1" variant="h5">
-          Modifier le Produit
-        </Typography>
+    <Container >
+      <Box sx={{ marginTop: 15}}>
+        <Typography variant='h5' sx={{ fontWeight: '300' }} gutterBottom> Modifier le Produit</Typography>
+      </Box>
+      <Box>
         <Box component="form" sx={{ mt: 3 }}>
           <TextField
             name="name"
