@@ -11,13 +11,12 @@ import RolePieChart from '../conponents/rolePieChart';
 const DashboardAdmin = () =>  {
   return (
     <Container>
-      <ContentWrapper/>
-      <Box sx={{ display: 'flex' , marginTop: 5}}>
+      <Box sx={{ display: 'flex' , marginTop: 15}}>
         <Navbar />
         <Sidebar />
             <Box>
               <Typography variant='h4' sx={{ fontWeight: '300' }} gutterBottom>
-              Dashboard
+              Bienvenue sur le Dashboard Admin
               </Typography>
               <CategoryPieChart />
               <UserBarChart />
