@@ -2,16 +2,16 @@ import React from 'react';
 import Navbar from '../conponents/navbar';
 import Sidebar from '../conponents/sidebar';
 import { Box } from '@mui/material';
-import AddUserToPharmacy from '../conponents/addUserToPharmacyForm'
+import AdminUser from '../conponents/addAdminForm'
 
-const AddUserToPharmacyPage = () =>  {
+const AddAdminPage = () =>  {
   return (
     <Box sx={{ display: 'flex' }}>
       <Navbar />
       <Sidebar />
-      <AddUserToPharmacy />
+      <AdminUser />
     </Box>
   );
 }
 
-export default AddUserToPharmacyPage;
+export default AddAdminPage;

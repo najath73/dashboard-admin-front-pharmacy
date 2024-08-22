@@ -80,8 +80,9 @@ const SidebarMenu = () => {
         </ListItem>
         <Collapse in={openUsers} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>
-            
-            
+          <ListItem button sx={{ pl: 4 }} onClick={() => handleNavigation('/add-admin')}>
+              <ListItemText primary="Ajout d'un" />
+            </ListItem>
             <ListItem button sx={{ pl: 4 }} onClick={() => handleNavigation('/user-list')}>
               <ListItemText primary="Liste des utilisateurs" />
             </ListItem>

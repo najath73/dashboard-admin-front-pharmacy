@@ -4,6 +4,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import '../App.css'
 
 const UserList = () => {
   const [users, setUsers] = useState([]);
@@ -36,7 +37,7 @@ const UserList = () => {
   return (
     <Container>
       <Box mt={4}>
-        <Typography variant="h4" align="center" gutterBottom style={{ marginTop: '80px' }}>
+        <Typography variant="h4" align="center" className="montserrat-title" gutterBottom style={{ marginTop: '80px' }}>
           Liste des Utilisateurs
         </Typography>
         <List>
