@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Routes, Navigate} from 'react-router-dom';
 
-import LoginForm from './conponents/loginForm';
-import AddProductInPharmacyForm from './conponents/addProductPharmacy'
+import LoginForm from './components/loginForm';
+import AddProductInPharmacyForm from './components/addProductPharmacy'
 import DashboardAdmin from './pages/dashboardAdmin'
-import AddUserForm from './conponents/addUserToPharmacyForm'
+import AddUserForm from './components/addUserToPharmacyForm'
 import ProdutListPage from './pages/productListPage'
 import PharmacyListPage from './pages/pharmacyListPage'
 import AddProductPage from './pages/addProductPage'
@@ -15,7 +15,7 @@ import UserListPage from './pages/userListPage'
 import AddUserToPharmacyPage from './pages/addUserPage'
 import PharmacyDetailsPage from './pages/pharmacyDetailsPage'
 import AddAdminPage from './pages/addAdminPage'
-import PrivateRoute from './conponents/privateRoute';
+import PrivateRoute from './components/privateRoute';
 
 const AppRoutes = ()=> {
   return (

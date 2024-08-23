@@ -14,7 +14,7 @@ const SidebarUserPanel = () => {
 
   return (
     <Box display="flex" alignItems="center" p={2}>
-      <Avatar src={avatar || "https://gravatar.com/avatar/40343cd80c30e6ef9117800cc0c717ac?s=400&d=robohash&r=x"} alt="User" />
+      <Avatar src={avatar || "https://avatar.iran.liara.run/public"} alt="User" />
       <Box ml={2}>
         <Typography variant="body1">{username || "Nom d'utilisateur"}</Typography>
       </Box>
