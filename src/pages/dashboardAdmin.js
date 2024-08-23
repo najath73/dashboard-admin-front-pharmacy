@@ -1,12 +1,12 @@
 import React from 'react';
-import Navbar from '../conponents/navbar';
-import Sidebar from '../conponents/sidebar';
-import ContentWrapper from '../conponents/content';
+import Navbar from '../components/navbar';
+import Sidebar from '../components/sidebar';
+import ContentWrapper from '../components/content';
 import { Container, Typography, Box } from '@mui/material';
-import CategoryPieChart from '../conponents/categoryPieChart';
-import UserBarChart from '../conponents/userBarChart';
-import PharmacyBarChart from '../conponents/pharmacyBarChart';
-import RolePieChart from '../conponents/rolePieChart';
+import CategoryPieChart from '../components/categoryPieChart';
+import UserBarChart from '../components/userBarChart';
+import PharmacyBarChart from '../components/pharmacyBarChart';
+import RolePieChart from '../components/rolePieChart';
 
 const DashboardAdmin = () =>  {
   return (

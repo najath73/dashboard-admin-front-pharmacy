@@ -1,8 +1,8 @@
 import React from 'react';
-import Navbar from '../conponents/navbar';
-import Sidebar from '../conponents/sidebar';
+import Navbar from '../components/navbar';
+import Sidebar from '../components/sidebar';
 import { Box } from '@mui/material';
-import PharmacyList from '../conponents/listPharmacies'
+import PharmacyList from '../components/listPharmacies'
 
 const PharmacyListPage = () =>  {
   return (
