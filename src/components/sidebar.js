@@ -1,27 +1,47 @@
 import React from 'react';
-import { Drawer, Box, Toolbar } from '@mui/material';
+import { Drawer, Box, List, Divider } from '@mui/material';
 import SidebarUserPanel from './sidebarUserPanel';
 import SidebarMenu from './sidebarMenu';
 
-const Sidebar = () =>  {
-  const drawerWidth = 240;
+const drawerWidth = 240;
 
+const Sidebar = () => {
   return (
     <Drawer
-      variant="permanent"
       sx={{
         width: drawerWidth,
         flexShrink: 0,
-        [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
+        '& .MuiDrawer-paper': {
+          width: drawerWidth,
+          boxSizing: 'border-box',
+          backgroundColor: '#1F2A30', // Couleur sombre pour la sidebar
+        },
       }}
+      variant="permanent"
+      anchor="left"
     >
-      <Toolbar />
-      <Box sx={{ overflow: 'auto' }}>
-        <SidebarUserPanel />
-        <SidebarMenu />
+
+       {/* Main content */}
+      <Box
+        component="main"
+        sx={{
+          marginTop: '64px',
+          bgcolor: 'background.default',
+        }}
+      >
       </Box>
+
+      {/* SidebarUserPanel */}
+      <SidebarUserPanel />
+    
+
+      {/* Divider */}
+      <Divider sx={{ borderColor: '#333' }} />
+
+      {/* SidebarMenu */}
+      <SidebarMenu />
     </Drawer>
   );
-}
+};
 
 export default Sidebar;

@@ -19,30 +19,28 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="fixed" sx={{ bgcolor: '#007B7F', width: `calc(100% - 240px)`, ml: '240px' }}>
+    <AppBar position="fixed" sx={{ zIndex: 1201, backgroundColor: '#1F2A30' }}>
       <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-          <MenuIcon />
-        </IconButton>
-        <IconButton color="inherit" onClick={handleHomeClick}>
+          <IconButton color="inherit" onClick={handleHomeClick}>
             <HomeIcon />
           </IconButton>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
-          Pharma App
+           Pharma 4All
         </Typography>
-        <Box>
-          
-          <Button
-            color="inherit"
-            onClick={handleLogout}
-            sx={{ ml: 2 }}
-          >
-            Déconnexion
-          </Button>
-        </Box>
+        
+        <Button
+          color="inherit"
+          onClick={handleLogout} // Assurez-vous que la fonction logout est définie dans votre contexte
+          sx={{ ml: 2 }} // Ajout d'un espacement à gauche pour le bouton
+        >
+          Déconnexion
+        </Button>
       </Toolbar>
     </AppBar>
   );
-}
+};
+
 
 export default Navbar;
+
+

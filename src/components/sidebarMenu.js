@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+import { List, ListItem, ListItemIcon, ListItemText, Collapse } from '@mui/material';
 import LocalPharmacyIcon from '@mui/icons-material/LocalPharmacy';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import PeopleIcon from '@mui/icons-material/People';
-import Collapse from '@mui/material/Collapse';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import { useNavigate } from 'react-router-dom';
 
 const SidebarMenu = () => {
   const [openPharmacies, setOpenPharmacies] = useState(false);
@@ -35,96 +31,64 @@ const SidebarMenu = () => {
 
   return (
     <List>
-      <ListItem 
-        button 
-        onClick={handlePharmaciesClick} 
-      >
-        <ListItemIcon sx={{ minWidth: '30px' }}>
-          <LocalPharmacyIcon fontSize="small" />
+      {/* Pharmacies */}
+      <ListItem button onClick={handlePharmaciesClick}>
+        <ListItemIcon>
+          <LocalPharmacyIcon sx={{ color: '#4CAF50' }} />
         </ListItemIcon>
-        <ListItemText primary="Pharmacies" sx={{ fontSize: '0.8rem', fontWeight: 300 }}/>
+        <ListItemText primary="Pharmacies" sx={{ color: '#fff' }} />
         {openPharmacies ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={openPharmacies} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItem 
-            button 
-            sx={{ pl: 4, py: 0.5, fontSize: '0.8rem', fontWeight: 300 }} // Taille et poids réduits
-            onClick={() => handleNavigation('/add-pharmacy')}
-          >
-            <ListItemText primary="Ajout d'une pharmacie" />
+          <ListItem button sx={{ pl: 4 }} onClick={() => handleNavigation('/add-pharmacy')}>
+            <ListItemText primary="Ajout d'une pharmacie" sx={{ color: '#fff' }} />
           </ListItem>
-          <ListItem 
-            button 
-            sx={{ pl: 4, py: 0.5, fontSize: '0.8rem', fontWeight: 300 }} // Taille et poids réduits
-            onClick={() => handleNavigation('/pharmacy-list')}
-          >
-            <ListItemText primary="Liste des pharmacies" />
+          <ListItem button sx={{ pl: 4 }} onClick={() => handleNavigation('/pharmacy-list')}>
+            <ListItemText primary="Liste des pharmacies" sx={{ color: '#fff' }} />
           </ListItem>
         </List>
       </Collapse>
 
-      <ListItem 
-        button 
-        onClick={handleProductsClick} 
-        sx={{ py: 1, fontSize: '0.9rem', fontWeight: 300 }} // Taille et poids réduits
-      >
-        <ListItemIcon sx={{ minWidth: '30px' }}>
-          <InventoryIcon fontSize="small" />
+      {/* Produits */}
+      <ListItem button onClick={handleProductsClick}>
+        <ListItemIcon>
+          <InventoryIcon sx={{ color: '#4CAF50' }} />
         </ListItemIcon>
-        <ListItemText primary="Produits" />
+        <ListItemText primary="Produits" sx={{ color: '#fff' }} />
         {openProducts ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={openProducts} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItem 
-            button 
-            sx={{ pl: 4, py: 0.5, fontSize: '0.8rem', fontWeight: 300 }} // Taille et poids réduits
-            onClick={() => handleNavigation('/add-product')}
-          >
-            <ListItemText primary="Ajout d'un produit" />
+          <ListItem button sx={{ pl: 4 }} onClick={() => handleNavigation('/add-product')}>
+            <ListItemText primary="Ajout d'un produit" sx={{ color: '#fff' }} />
           </ListItem>
-          <ListItem 
-            button 
-            sx={{ pl: 4, py: 0.5, fontSize: '0.8rem', fontWeight: 300 }} // Taille et poids réduits
-            onClick={() => handleNavigation('/product-list')}
-          >
-            <ListItemText primary="Liste des produits" />
+          <ListItem button sx={{ pl: 4 }} onClick={() => handleNavigation('/product-list')}>
+            <ListItemText primary="Liste des produits" sx={{ color: '#fff' }} />
           </ListItem>
         </List>
       </Collapse>
 
-      <ListItem 
-        button 
-        onClick={handleUsersClick} 
-        sx={{ py: 1, fontSize: '0.9rem', fontWeight: 300 }} // Taille et poids réduits
-      >
-        <ListItemIcon sx={{ minWidth: '30px' }}>
-          <PeopleIcon fontSize="small" />
+      {/* Utilisateurs */}
+      <ListItem button onClick={handleUsersClick}>
+        <ListItemIcon>
+          <PeopleIcon sx={{ color: '#4CAF50' }} />
         </ListItemIcon>
-        <ListItemText primary="Utilisateurs" />
+        <ListItemText primary="Utilisateurs" sx={{ color: '#fff' }} />
         {openUsers ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={openUsers} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItem 
-            button 
-            sx={{ pl: 4, py: 0.5, fontSize: '0.8rem', fontWeight: 300 }} // Taille et poids réduits
-            onClick={() => handleNavigation('/add-admin')}
-          >
-            <ListItemText primary="Ajout d'un utilisateur" />
+          <ListItem button sx={{ pl: 4 }} onClick={() => handleNavigation('/add-user')}>
+            <ListItemText primary="Ajout d'un utilisateur" sx={{ color: '#fff' }} />
           </ListItem>
-          <ListItem 
-            button 
-            sx={{ pl: 4, py: 0.5, fontSize: '0.8rem', fontWeight: 300 }} // Taille et poids réduits
-            onClick={() => handleNavigation('/user-list')}
-          >
-            <ListItemText primary="Liste des utilisateurs" />
+          <ListItem button sx={{ pl: 4 }} onClick={() => handleNavigation('/user-list')}>
+            <ListItemText primary="Liste des utilisateurs" sx={{ color: '#fff' }} />
           </ListItem>
         </List>
       </Collapse>
     </List>
   );
-}
+};
 
 export default SidebarMenu;
