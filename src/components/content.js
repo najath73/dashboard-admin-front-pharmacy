@@ -26,7 +26,7 @@ const ContentWrapper = () => {
           <AdminPanelSettingsIcon fontSize="inherit" />
         </IconButton>
 
-        <Typography variant="h2">Bienvenue sur le Dashboard Admin</Typography>
+        <Typography variant="h2"></Typography>
 
         <Typography>
           Gérez facilement les utilisateurs, les produits et les pharmacies grâce à cette interface moderne, intuitive et
