@@ -93,9 +93,9 @@ const AddPharmacyForm = () => {
             mt: 3,
             bgcolor: '#007B7F', // Bleu turquoise foncé
             '&:hover': {
-            bgcolor: '#006668', // Légèrement plus foncé au survol
+              bgcolor: '#006668', // Légèrement plus foncé au survol
             },
-    }}
+          }}
     >
             Ajouter la Pharmacie
           </Button>

@@ -101,7 +101,13 @@ const AddProductInPharmacyForm = () => {
           />
           {error && <Typography color="error" variant="body2">{error}</Typography>}
           {success && <Typography color="primary" variant="body2">{success}</Typography>}
-          <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+          <Button type="submit" fullWidth variant="contained"sx={{
+            mt: 3, mb:2,
+            bgcolor: '#007B7F', // Bleu turquoise foncé
+            '&:hover': {
+              bgcolor: '#006668', // Légèrement plus foncé au survol
+            },
+          }}>
             Ajouter le produit
           </Button>
         </Box>

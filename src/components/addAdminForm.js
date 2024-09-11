@@ -93,14 +93,12 @@ const AdminUser = () => {
           <Button
             variant="contained"
             sx={{
-              backgroundColor: "#35b2a3",
-              color: "#fff",
-              '&:hover': {
-                backgroundColor: "#2f9a8e",
-              },
               mt: 3,
+              bgcolor: '#007B7F', // Bleu turquoise foncé
+              '&:hover': {
+                bgcolor: '#006668', // Légèrement plus foncé au survol
+              },
             }}
-            type="submit"
           >
             Ajouter l'Admin
           </Button>

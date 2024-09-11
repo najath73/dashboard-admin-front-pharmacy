@@ -56,12 +56,13 @@ const AddProductForm = () => {
             />
             {error && <Typography color="error" variant="body2">{error}</Typography>}
             <Button type="submit" fullWidth variant="contained" 
-              sx={{ mt: 3,
-              bgcolor: '#007B7F', // Bleu turquoise foncé
-              '&:hover': {
-              bgcolor: '#006668', // Légèrement plus foncé au survol
-              },
-            }}
+              sx={{
+                mt: 3,
+                bgcolor: '#007B7F', // Bleu turquoise foncé
+                '&:hover': {
+                  bgcolor: '#006668', // Légèrement plus foncé au survol
+                },
+              }}
             
             
             >
