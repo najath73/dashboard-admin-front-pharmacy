@@ -5,7 +5,7 @@ Ce dashboard permet aux administrateurs de gérer toutes les pharmacies, les uti
 
 ## Connexion
 - **Identifiant** : string
-- **Mot de passe** : M=':e5D"/E%A
+- **Mot de passe** :M=':e5D"/E%A
 
 ## Prérequis
 - Node.js 14+
